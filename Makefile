@@ -1,11 +1,9 @@
 MAKE     = make
 .PHONY: test
 
-RISCV ?= /tools/riscv
+RISCV ?= 
 
-XHEEP_FOLDER ?= ..
-
-TARGET   	?= sim
+X_HEEP_LIB_FOLDER ?= 
 
 COMPILER_PREFIX ?= riscv32-unknown-
 
@@ -42,7 +40,7 @@ RISCV_FLAGS := -march=$(ARCH) \
 
 CFLAGS := $(TFLITE_COMMON_FLAGS) $(RISCV_FLAGS) -std=c11
 
-CXXFLAGS := $(TFLITE_COMMON_FLAGS) $(RISCV_FLAGS) -std=c++11 \
+CXXFLAGS := $(TFLITE_COMMON_FLAGS) $(RISCV_FLAGS) -std=c++14 \
   -fno-use-cxa-atexit \
   -fpermissive \
   -fno-rtti \
@@ -60,10 +58,10 @@ TFLM_INCLUDES := \
   -I ./third_party/ruy
 
 XHEEP_INCLUDES := \
-  -I $(XHEEP_FOLDER)/target \
-  -I $(XHEEP_FOLDER)/base \
-  -I $(XHEEP_FOLDER)/base/freestanding \
-  -I $(XHEEP_FOLDER)/
+  -I $(X_HEEP_LIB_FOLDER)/target \
+  -I $(X_HEEP_LIB_FOLDER)/base \
+  -I $(X_HEEP_LIB_FOLDER)/base/freestanding \
+  -I $(X_HEEP_LIB_FOLDER)/
 
 RISCV_INCLUDES := \
   -I ${RISCV}/${COMPILER_PREFIX}elf/include \
