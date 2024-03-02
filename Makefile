@@ -60,7 +60,6 @@ TFLM_INCLUDES := \
 XHEEP_INCLUDES := \
   -I $(X_HEEP_LIB_FOLDER)/target \
   -I $(X_HEEP_LIB_FOLDER)/base \
-  -I $(X_HEEP_LIB_FOLDER)/base/freestanding \
   -I $(X_HEEP_LIB_FOLDER)/
 
 RISCV_INCLUDES := \
